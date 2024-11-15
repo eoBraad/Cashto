@@ -1,4 +1,4 @@
-namespace Cashto.Communication.Responses;
+namespace Cashto.Communication.Responses.Global;
 
 public class ResponseErrorJson
 {

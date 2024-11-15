@@ -1,4 +1,5 @@
 using Cashto.Communication.Responses;
+using Cashto.Communication.Responses.Global;
 using Cashto.Exception;
 using Cashto.Exception.ExceptionBase;
 using Microsoft.AspNetCore.Mvc;
