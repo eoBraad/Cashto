@@ -10,6 +10,8 @@
 *.sln.docstates
 *.userprefs
 
+.idea
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
