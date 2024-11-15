@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-
+      <ProjectReference Include="..\Cashto.Domain\Cashto.Domain.csproj" />
     </ItemGroup>
 
 </Project>
