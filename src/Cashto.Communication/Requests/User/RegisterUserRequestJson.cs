@@ -1,6 +1,6 @@
 namespace Cashto.Communication.Requests.User;
 
-public class CreateUserRequestJson
+public class RegisterUserRequestJson
 {
     public string? Name { get; set; }
     public string? LastName { get; set; }
