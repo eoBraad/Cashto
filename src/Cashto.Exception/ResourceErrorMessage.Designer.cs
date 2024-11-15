@@ -9,8 +9,8 @@
 
 namespace Cashto.Exception {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,15 +22,15 @@ namespace Cashto.Exception {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ResourceErrorMessage {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal ResourceErrorMessage() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Cashto.Exception {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,7 +58,7 @@ namespace Cashto.Exception {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The amount must be greater than zero.
         /// </summary>
@@ -67,7 +67,7 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("AMOUNT_MUST_BE_GREATER_THAN_ZERO", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to This email is already in use..
         /// </summary>
@@ -76,7 +76,7 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The email cannot be empty..
         /// </summary>
@@ -85,7 +85,7 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("EMAIL_EMPTY", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The email is invalid..
         /// </summary>
@@ -94,7 +94,7 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Invalid e-mail and/or password..
         /// </summary>
@@ -103,16 +103,25 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("EMAIL_OR_PASSWORD_INVALID", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Your password should be a minimum of 8 characters, containing at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !, ?, *, .)..
+        ///   Looks up a localized string similar to Your password should be a minimum of 8 characters..
         /// </summary>
         public static string INVALID_PASSWORD {
             get {
                 return ResourceManager.GetString("INVALID_PASSWORD", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The lastname cannot be empty..
+        /// </summary>
+        public static string LAST_NAME_EMPTY {
+            get {
+                return ResourceManager.GetString("LAST_NAME_EMPTY", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to The name cannot be empty..
         /// </summary>
@@ -121,7 +130,7 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("NAME_EMPTY", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The password entered is different from the current password..
         /// </summary>
@@ -130,7 +139,16 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("PASSWORD_DIFFERENT_CURRENT_PASSWORD", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password cannot be empty.
+        /// </summary>
+        public static string PASSWORD_EMPTY {
+            get {
+                return ResourceManager.GetString("PASSWORD_EMPTY", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Unknown error.
         /// </summary>
