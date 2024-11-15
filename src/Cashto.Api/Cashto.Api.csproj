@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Cashto.Application\Cashto.Application.csproj" />
       <ProjectReference Include="..\Cashto.Communication\Cashto.Communication.csproj" />
       <ProjectReference Include="..\Cashto.Exception\Cashto.Exception.csproj" />
       <ProjectReference Include="..\Cashto.Infrastructure\Cashto.Infrastructure.csproj" />
