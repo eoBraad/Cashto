@@ -13,7 +13,7 @@ public class AutoMapping : Profile
 
     private void ResponseToEntityMapping()
     {
-        CreateMap<CreateUserRequestJson, User>()
+        CreateMap<RegisterUserRequestJson, User>()
             .ForMember(dest => dest.Password, conf => conf.Ignore());
     }
 }
