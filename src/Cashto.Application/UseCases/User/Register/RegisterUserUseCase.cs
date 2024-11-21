@@ -50,7 +50,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
             result.Errors.Add(new ValidationFailure(string.Empty, "Email already exists"));
         }
 
-        if (!result.IsValid == false || result.Errors.Count > 0)
+        if (result.IsValid == false || result.Errors.Count > 0)
         {
             var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
 

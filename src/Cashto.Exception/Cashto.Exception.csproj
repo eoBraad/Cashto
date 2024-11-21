@@ -7,19 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Update="ResourceErrorMessage.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>ResourceErrorMessage.resx</DependentUpon>
-      </Compile>
+        <EmbeddedResource Remove="ResourceErrorMessage.resx"/>
+        <EmbeddedResource Update="ResourceErrorMessages.resx" publicClass="true">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>ResourceErrorMessages.Designer.cs</LastGenOutput>
+            <PublicClass>true</PublicClass>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Remove="ResourceErrorMessage.resx" />
-      <Resource Include="ResourceErrorMessage.resx">
-        <Generator>PublicResXFileCodeGenerator</Generator>
-        <LastGenOutput>ResourceErrorMessage.Designer.cs</LastGenOutput>
-      </Resource>
+        <Compile Remove="ResourceErrorMessage.Designer.cs"/>
+        <Compile Update="ResourceErrorMessages.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>ResourceErrorMessages.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
 
 </Project>
