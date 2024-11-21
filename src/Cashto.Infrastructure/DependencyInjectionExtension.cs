@@ -1,5 +1,6 @@
 ﻿using Cashto.Domain.Repositories;
 using Cashto.Domain.Repositories.User;
+using Cashto.Domain.Security.Cryptography;
 using Cashto.Infrastructure.Database;
 using Cashto.Infrastructure.Repositories;
 using Cashto.Infrastructure.Repositories.User;
@@ -21,6 +22,7 @@ public static class DependencyInjectionExtension
         });
 
         AddRepositories(services);
+        AddServices(services);
     }
 
     public static void AddRepositories(this IServiceCollection services)
@@ -28,5 +30,10 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUserReadOnlyRepository, UserReadOnlyRepository>()
             .AddScoped<IUserWriteOnlyRepository, UserWriteOnlyRepository>()
             .AddScoped<IWorkUnity, WorkUnity>();
+    }
+
+    public static void AddServices(this IServiceCollection services)
+    {
+        services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
     }
 }
