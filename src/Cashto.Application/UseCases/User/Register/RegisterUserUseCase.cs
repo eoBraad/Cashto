@@ -3,6 +3,7 @@ using Cashto.Communication.Requests.User;
 using Cashto.Domain.Repositories;
 using Cashto.Domain.Repositories.User;
 using Cashto.Domain.Security.Cryptography;
+using Cashto.Exception;
 using Cashto.Exception.ExceptionBase;
 using FluentValidation.Results;
 
@@ -47,7 +48,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         if (emailExists > 0)
         {
-            result.Errors.Add(new ValidationFailure(string.Empty, "Email already exists"));
+            result.Errors.Add(new ValidationFailure(string.Empty, ResourceErrorMessages.EMAIL_ALREADY_REGISTERED));
         }
 
         if (result.IsValid == false || result.Errors.Count > 0)
