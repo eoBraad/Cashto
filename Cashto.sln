@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2C27EF03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashto.ValidatorsTest", "tests\Cashto.ValidatorsTest\Cashto.ValidatorsTest.csproj", "{9F0B7A8D-7605-475E-9D4D-A90794A83DFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashto.TstsUtilities", "tests\Cashto.TstsUtilities\Cashto.TstsUtilities.csproj", "{1FCEEDB0-97DD-42DC-97D9-8F061317957A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashto.TestsUtilities", "tests\Cashto.TestsUtilities\Cashto.TestsUtilities.csproj", "{1FCEEDB0-97DD-42DC-97D9-8F061317957A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashto.UseCaseTests", "tests\Cashto.UseCaseTests\Cashto.UseCaseTests.csproj", "{651FE23C-7F8A-4239-A57D-409013C707DA}"
 EndProject
