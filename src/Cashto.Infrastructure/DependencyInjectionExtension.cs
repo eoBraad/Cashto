@@ -31,14 +31,14 @@ public static class DependencyInjectionExtension
         AddServices(services);
     }
 
-    public static void AddRepositories(this IServiceCollection services)
+    private static void AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserReadOnlyRepository, UserReadOnlyRepository>()
             .AddScoped<IUserWriteOnlyRepository, UserWriteOnlyRepository>()
             .AddScoped<IWorkUnity, WorkUnity>();
     }
 
-    public static void AddServices(this IServiceCollection services)
+    private static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
     }
