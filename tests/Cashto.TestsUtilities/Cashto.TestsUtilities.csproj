@@ -24,7 +24,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Cashto.Application\Cashto.Application.csproj" />
       <ProjectReference Include="..\..\src\Cashto.Communication\Cashto.Communication.csproj" />
+      <ProjectReference Include="..\..\src\Cashto.Domain\Cashto.Domain.csproj" />
     </ItemGroup>
-
 </Project>
