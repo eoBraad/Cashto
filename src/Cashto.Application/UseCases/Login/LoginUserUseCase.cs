@@ -24,6 +24,12 @@ public class LoginUserUseCase : ILoginUserUseCase
     public async Task<LoginUserResponseJson> Execute(LoginUserRequestJson request)
     {
         var user = await _userReadOnlyRepository.GetUserByEmailAsync(request.Email!);
+
+        if (user == null)
+        {
+            throw new ErrorOnLoginException("User Email or Password incorrect");
+        }
+
         var passwordCorrect = _passwordEncripter.Verify(request.Password, user.Password!);
 
         if (user == null || passwordCorrect == false)

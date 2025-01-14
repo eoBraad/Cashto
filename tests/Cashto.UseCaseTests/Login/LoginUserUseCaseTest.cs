@@ -1,4 +1,5 @@
 using Cashto.Application.UseCases.Login;
+using Cashto.Exception.ExceptionBase;
 using Cashto.TestsUtilities.Repositories.User;
 using Cashto.TestsUtilities.Requests.Login;
 using Cashto.TestsUtilities.Security.Cryptography;
@@ -18,6 +19,17 @@ public class LoginUserUseCaseTest
         var act = async () => await useCase.Execute(request);
 
         await act.Should().NotThrowAsync();
+    }
+
+    [Fact]
+    public async void UserNotExists()
+    {
+        var request = LoginUserRequestJsonBuilder.Builder();
+        var useCase = CreateUseCase(request.Password, null);
+
+        var act = async () => await useCase.Execute(request);
+
+        await act.Should().ThrowAsync<ErrorOnLoginException>().WithMessage("User Email or Password incorrect");
     }
 
     private static LoginUserUseCase CreateUseCase(string? password, string? email)
