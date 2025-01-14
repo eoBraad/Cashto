@@ -157,5 +157,14 @@ namespace Cashto.Exception {
                 return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User or password incorrect.
+        /// </summary>
+        public static string USER_OR_PASSWORD_INCORRECT {
+            get {
+                return ResourceManager.GetString("USER_OR_PASSWORD_INCORRECT", resourceCulture);
+            }
+        }
     }
 }

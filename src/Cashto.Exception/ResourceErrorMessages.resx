@@ -155,4 +155,7 @@
     <data name="PASSWORD_EMPTY" xml:space="preserve">
     <value>Password cannot be empty</value>
   </data>
+    <data name="USER_OR_PASSWORD_INCORRECT" xml:space="preserve">
+        <value>User or password incorrect</value>
+    </data>
 </root>

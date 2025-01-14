@@ -12,9 +12,9 @@ public class UserReadOnlyRepositoryBuilder
         _mock = new Mock<IUserReadOnlyRepository>();
     }
 
-    public void GetUserByEmailAsync(string email)
+    public void VerifyUserEmailExisits(string email)
     {
-        _mock.Setup(x => x.GetUserByEmailAsync(email)).ReturnsAsync(1);
+        _mock.Setup(x => x.VerifyUserEmailExisits(email)).ReturnsAsync(1);
     }
 
     public IUserReadOnlyRepository Build()

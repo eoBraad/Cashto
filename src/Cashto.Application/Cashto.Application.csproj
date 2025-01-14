@@ -17,4 +17,8 @@
       <ProjectReference Include="..\Cashto.Exception\Cashto.Exception.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="UseCases\Login\LoginUserValidator.cs" />
+    </ItemGroup>
+
 </Project>

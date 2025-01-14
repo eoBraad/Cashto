@@ -47,7 +47,7 @@ public class RegisterUserUseCaseTest
 
         if (string.IsNullOrWhiteSpace(email) == false)
         {
-            userReadOnlyRepository.GetUserByEmailAsync(email);
+            userReadOnlyRepository.VerifyUserEmailExisits(email);
         }
 
         return new RegisterUserUseCase(userReadOnlyRepository.Build(), userWriteOnlyRepository, mapper, passowrdEncrypter, workUnity);

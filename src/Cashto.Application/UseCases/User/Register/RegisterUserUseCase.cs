@@ -44,7 +44,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     {
         var result = new RegisterUserValidator().Validate(request);
 
-        var emailExists = await _userReadOnlyRepository.GetUserByEmailAsync(request.Email);
+        var emailExists = await _userReadOnlyRepository.VerifyUserEmailExisits(request.Email);
 
         if (emailExists > 0)
         {
