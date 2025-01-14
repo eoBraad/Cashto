@@ -17,6 +17,15 @@ public class UserReadOnlyRepositoryBuilder
         _mock.Setup(x => x.VerifyUserEmailExisits(email)).ReturnsAsync(1);
     }
 
+    public void GetUserByEmail(string email)
+    {
+        _mock.Setup(x => x.GetUserByEmailAsync(email)).ReturnsAsync(new Domain.Entities.User()
+        {
+            Email = email,
+            Password = "213esda"
+        });
+    }
+
     public IUserReadOnlyRepository Build()
     {
         return _mock.Object;
