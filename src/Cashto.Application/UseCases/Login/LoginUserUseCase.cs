@@ -23,6 +23,9 @@ public class LoginUserUseCase : ILoginUserUseCase
 
     public async Task<LoginUserResponseJson> Execute(LoginUserRequestJson request)
     {
+
+        Validate(request);
+
         var user = await _userReadOnlyRepository.GetUserByEmailAsync(request.Email!);
 
         if (user == null)
@@ -42,5 +45,16 @@ public class LoginUserUseCase : ILoginUserUseCase
             AccessToken = _accessTokenGenerator.Generate(user),
             Name = user.Name
         };
+    }
+
+    private void Validate(LoginUserRequestJson request)
+    {
+        var validator = new LoginValidator();
+        var result = validator.Validate(request);
+        if (result.IsValid == false || result.Errors.Count > 0)
+        {
+            var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
+            throw new ErrorOnValidationException(errorMessages);
+        }
     }
 }
