@@ -16,11 +16,17 @@ public class UserReadOnlyRepository(CashtoDbContext context) : IUserReadOnlyRepo
     {
          var user = await context.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Email == email);
 
-         return user;
+         return user!;
     }
 
-    public async Task<Domain.Entities.User> GetUserByIdAsync(Guid id)
+
+    public async Task<Domain.Entities.User> GetByIdAsync(Guid id)
     {
-        return await context.Users.FirstOrDefaultAsync(x => x.Id == id);
+        return (await context.Users.FirstOrDefaultAsync(x => x.Id == id))!;
+    }
+
+    public async Task<List<Domain.Entities.Transaction>> GetAllAsync()
+    {
+        return (await context.Transactions.AsNoTracking().ToListAsync())!;
     }
 }
