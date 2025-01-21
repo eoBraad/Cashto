@@ -1,9 +1,11 @@
 ﻿using Cashto.Domain.Repositories;
+using Cashto.Domain.Repositories.Transaction;
 using Cashto.Domain.Repositories.User;
 using Cashto.Domain.Security.Cryptography;
 using Cashto.Domain.Security.Tokens;
 using Cashto.Infrastructure.Database;
 using Cashto.Infrastructure.Repositories;
+using Cashto.Infrastructure.Repositories.Transaction;
 using Cashto.Infrastructure.Repositories.User;
 using Cashto.Infrastructure.Security.Tokens;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +37,9 @@ public static class DependencyInjectionExtension
     {
         services.AddScoped<IUserReadOnlyRepository, UserReadOnlyRepository>()
             .AddScoped<IUserWriteOnlyRepository, UserWriteOnlyRepository>()
-            .AddScoped<IWorkUnity, WorkUnity>();
+            .AddScoped<IWorkUnity, WorkUnity>()
+            .AddScoped<ITransactionReadOnlyRepository, TransactionRepository>()
+            .AddScoped<ITransactionWriteOnlyRepository, TransactionRepository>();
     }
 
     private static void AddServices(this IServiceCollection services)
