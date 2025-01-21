@@ -2,7 +2,6 @@ using Cashto.Domain.Entities;
 
 namespace Cashto.Domain.Repositories.User;
 
-public interface IUserWriteOnlyRepository
+public interface IUserWriteOnlyRepository : IBaseRepositoryWriteOnly<Entities.User>
 {
-    public Task AddAsync(Entities.User user);
 }
