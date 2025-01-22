@@ -10,17 +10,17 @@ public class TransactionRepository(CashtoDbContext context, IWorkUnity workUnity
 {
     public async Task AddAsync(Domain.Entities.Transaction? entity)
     {
-        await context.Transactions.AddAsync(entity);
+        await context.Transactions.AddAsync(entity!);
         await workUnity.Commit();
     }
 
     public async Task<Domain.Entities.Transaction> GetByIdAsync(Guid id)
     {
-        return (await context.Transactions.FindAsync(id))!;
+        return await context.Transactions.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<List<Domain.Entities.Transaction>> GetAllAsync()
     {
-        return (await context.Transactions.ToListAsync())!;
+        return await context.Transactions.AsNoTracking().ToListAsync();
     }
 }

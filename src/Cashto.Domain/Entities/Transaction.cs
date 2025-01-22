@@ -14,8 +14,8 @@ public class Transaction : BaseEntity
 
     public TransactionType Type { get; set; }
 
-    public User User { get; set; }
+    public User User { get; } = new User();
 
-    public Account Account { get; set; }
+    public Account Account { get; } = new Account();
 }
 

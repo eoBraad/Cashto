@@ -1,5 +1,7 @@
+using System.Security.Claims;
 using Cashto.Application.UseCases.User.Register;
 using Cashto.Communication.Requests.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,4 +18,14 @@ public class UserController : ControllerBase
 
         return Created("", null);
     }
+
+    /*[HttpGet]
+    [Authorize]
+    public IActionResult GetMe()
+    {
+        var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Sid)?.Value;
+
+        return Ok(new { Id = userId });
+    }*/
+
 }
