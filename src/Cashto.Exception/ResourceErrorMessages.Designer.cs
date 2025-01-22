@@ -60,6 +60,33 @@ namespace Cashto.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The balance cannot be null..
+        /// </summary>
+        public static string ACCOUNT_BALANCE_EMPTY {
+            get {
+                return ResourceManager.GetString("ACCOUNT_BALANCE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The account name cannot be empty.
+        /// </summary>
+        public static string ACCOUNT_NAME_EMPTY {
+            get {
+                return ResourceManager.GetString("ACCOUNT_NAME_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The account name need greater than 3 characteres.
+        /// </summary>
+        public static string ACCOUNT_NAME_MINIMUM {
+            get {
+                return ResourceManager.GetString("ACCOUNT_NAME_MINIMUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The amount must be greater than zero.
         /// </summary>
         public static string AMOUNT_MUST_BE_GREATER_THAN_ZERO {

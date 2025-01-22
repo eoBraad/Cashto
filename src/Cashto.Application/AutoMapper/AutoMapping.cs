@@ -1,4 +1,5 @@
 using AutoMapper;
+using Cashto.Communication.Requests.Account;
 using Cashto.Communication.Requests.User;
 using Cashto.Domain.Entities;
 
@@ -8,12 +9,14 @@ public class AutoMapping : Profile
 {
     public AutoMapping()
     {
-        ResponseToEntityMapping();
+        RequestToEntityMapping();
     }
 
-    private void ResponseToEntityMapping()
+    private void RequestToEntityMapping()
     {
         CreateMap<RegisterUserRequestJson, User>()
             .ForMember(dest => dest.Password, conf => conf.Ignore());
+
+        CreateMap<CreateAccountRequestJson, Account>();
     }
 }

@@ -158,4 +158,13 @@
     <data name="USER_OR_PASSWORD_INCORRECT" xml:space="preserve">
         <value>User or password incorrect</value>
     </data>
+    <data name="ACCOUNT_BALANCE_EMPTY" xml:space="preserve">
+        <value>The balance cannot be null.</value>
+    </data>
+    <data name="ACCOUNT_NAME_EMPTY" xml:space="preserve">
+        <value>The account name cannot be empty</value>
+    </data>
+    <data name="ACCOUNT_NAME_MINIMUM" xml:space="preserve">
+        <value>The account name need greater than 3 characteres</value>
+    </data>
 </root>
