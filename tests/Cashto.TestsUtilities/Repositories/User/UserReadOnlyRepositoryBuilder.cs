@@ -14,7 +14,7 @@ public class UserReadOnlyRepositoryBuilder
 
     public void VerifyUserEmailExisits(string email)
     {
-        _mock.Setup(x => x.VerifyUserEmailExisits(email)).ReturnsAsync(1);
+        _mock.Setup(x => x.VerifyUserEmailExists(email)).ReturnsAsync(1);
     }
 
     public void GetUserByEmail(string email)
