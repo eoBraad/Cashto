@@ -7,17 +7,17 @@ namespace Cashto.Infrastructure.Repositories.Account;
 
 public class AccountRepository(CashtoDbContext context, IWorkUnity workUnity) : IAccountReadOnlyRepository, IAccountWriteOnlyRepository
 {
-    public async Task<Domain.Entities.Account> GetByIdAsync(Guid id)
+    public async Task<Domain.Entities.Account?> GetByIdAsync(Guid id)
     {
         return await context.Accounts.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
     }
 
-    public Task<List<Domain.Entities.Transaction>> GetAllAsync()
+    public Task<List<Domain.Entities.Transaction>?> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public async Task<Domain.Entities.Account> GetAccountByUserIdAsync(Guid userId)
+    public async Task<Domain.Entities.Account?> GetAccountByUserIdAsync(Guid userId)
     {
         return await context.Accounts.AsNoTracking().FirstOrDefaultAsync(a => a.UserId == userId);
     }

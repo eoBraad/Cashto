@@ -7,7 +7,7 @@ namespace Cashto.Infrastructure.Repositories.User;
 public class UserReadOnlyRepository(CashtoDbContext context) : IUserReadOnlyRepository
 {
 
-    public async Task<int> VerifyUserEmailExisits(string email)
+    public async Task<int> VerifyUserEmailExists(string email)
     {
         return await context.Users.CountAsync(x => x.Email == email);
     }
@@ -20,12 +20,12 @@ public class UserReadOnlyRepository(CashtoDbContext context) : IUserReadOnlyRepo
     }
 
 
-    public async Task<Domain.Entities.User> GetByIdAsync(Guid id)
+    public async Task<Domain.Entities.User?> GetByIdAsync(Guid id)
     {
         return (await context.Users.FirstOrDefaultAsync(x => x.Id == id))!;
     }
 
-    public async Task<List<Domain.Entities.Transaction>> GetAllAsync()
+    public async Task<List<Domain.Entities.Transaction>?> GetAllAsync()
     {
         return (await context.Transactions.AsNoTracking().ToListAsync())!;
     }

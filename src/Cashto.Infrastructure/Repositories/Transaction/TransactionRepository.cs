@@ -14,12 +14,12 @@ public class TransactionRepository(CashtoDbContext context, IWorkUnity workUnity
         await workUnity.Commit();
     }
 
-    public async Task<Domain.Entities.Transaction> GetByIdAsync(Guid id)
+    public async Task<Domain.Entities.Transaction?> GetByIdAsync(Guid id)
     {
         return await context.Transactions.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public async Task<List<Domain.Entities.Transaction>> GetAllAsync()
+    public async Task<List<Domain.Entities.Transaction>?> GetAllAsync()
     {
         return await context.Transactions.AsNoTracking().ToListAsync();
     }
