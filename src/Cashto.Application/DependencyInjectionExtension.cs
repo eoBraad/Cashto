@@ -1,4 +1,5 @@
 using Cashto.Application.AutoMapper;
+using Cashto.Application.UseCases.Account.Create;
 using Cashto.Application.UseCases.Login;
 using Cashto.Application.UseCases.User.Register;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,5 +23,6 @@ public static class DependencyInjectionExtension
     {
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<ILoginUserUseCase, LoginUserUseCase>();
+        services.AddScoped<ICreateAccountUseCase, CreateAccountUseCase>();
     }
 }
