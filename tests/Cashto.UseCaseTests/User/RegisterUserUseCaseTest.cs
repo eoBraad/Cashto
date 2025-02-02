@@ -43,13 +43,13 @@ public class RegisterUserUseCaseTest
         var mapper = MapperBuilder.Build();
         var userWriteOnlyRepository = UserWriteOnlyRepositoryBuilder.Build();
         var userReadOnlyRepository = new UserReadOnlyRepositoryBuilder();
-        var passowrdEncrypter = new PasswordEncrypterBuilder().Build();
+        var passwordEncripter = new PasswordEncrypterBuilder().Build();
 
         if (string.IsNullOrWhiteSpace(email) == false)
         {
             userReadOnlyRepository.VerifyUserEmailExisits(email);
         }
 
-        return new RegisterUserUseCase(userReadOnlyRepository.Build(), userWriteOnlyRepository, mapper, passowrdEncrypter, workUnity);
+        return new RegisterUserUseCase(userReadOnlyRepository.Build(), userWriteOnlyRepository, mapper, passwordEncripter, workUnity);
     }
 }
