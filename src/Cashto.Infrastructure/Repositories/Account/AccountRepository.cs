@@ -27,4 +27,20 @@ public class AccountRepository(CashtoDbContext context, IWorkUnity workUnity) : 
         await context.Accounts.AddAsync(entity);
         await workUnity.Commit();
     }
+
+    public async Task<Domain.Entities.Account> UpdateAsync(Domain.Entities.Account entity)
+    {
+        context.Accounts.Update(entity);
+
+        await workUnity.Commit();
+
+        return entity;
+    }
+
+    public async Task DeleteAsync(Domain.Entities.Account entity)
+    {
+        context.Accounts.Remove(entity);
+
+        await workUnity.Commit();
+    }
 }

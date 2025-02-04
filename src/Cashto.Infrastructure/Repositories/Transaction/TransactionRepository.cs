@@ -14,6 +14,22 @@ public class TransactionRepository(CashtoDbContext context, IWorkUnity workUnity
         await workUnity.Commit();
     }
 
+    public async Task<Domain.Entities.Transaction> UpdateAsync(Domain.Entities.Transaction entity)
+    {
+        context.Transactions.Update(entity);
+
+        await workUnity.Commit();
+
+        return entity;
+    }
+
+    public async Task DeleteAsync(Domain.Entities.Transaction entity)
+    {
+        context.Transactions.Remove(entity);
+        await workUnity.Commit();
+
+    }
+
     public async Task<Domain.Entities.Transaction?> GetByIdAsync(Guid id)
     {
         return await context.Transactions.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
