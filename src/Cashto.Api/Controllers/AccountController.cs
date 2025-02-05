@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cashto.Api.Controllers;
 
-
 [ApiController]
 [Route("api/[controller]")]
 public class AccountController : ControllerBase
 {
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> Create([FromBody] CreateAccountRequestJson request, [FromServices] ICreateAccountUseCase createAccountUseCase)
+    public async Task<IActionResult> Create([FromBody] CreateAccountRequestJson request,
+        [FromServices] ICreateAccountUseCase createAccountUseCase)
     {
         var userId = base.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Sid)?.Value;
 

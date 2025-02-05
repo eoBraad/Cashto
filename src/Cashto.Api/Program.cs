@@ -1,4 +1,5 @@
 using System.Text;
+using Cashto.Api.Authorization;
 using Cashto.Api.Filters;
 using Cashto.Application;
 using Cashto.Infrastructure;
@@ -30,6 +31,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration.GetSection("Jwt:SigningKey").Value!))
         };
+    });
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("OwnerPolicy", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.AddRequirements(new OwnerRequirement());
     });
 
 var app = builder.Build();
